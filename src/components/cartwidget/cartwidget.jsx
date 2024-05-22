@@ -1,9 +1,12 @@
-import react from `react`
+import React from 'react';
 
-const Cartwidget = {} => {
+const Cartwidget = () => {
     return (
-        <div>Cartwidget</div>
-    )
-}
+        <div>
+            <button>botonCW</button>
+            <div>Cartwidget</div>
+        </div>
+    );
+};
 
-export default Cartwidget
+export default Cartwidget;

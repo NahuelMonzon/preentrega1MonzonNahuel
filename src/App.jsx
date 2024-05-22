@@ -9,8 +9,8 @@ function App() {
   
   return (
     <div>
+      <button>AccessoriesTech</button>
       <Navbar />
-      <button>Danger</button>
     </div>
   )
 }
