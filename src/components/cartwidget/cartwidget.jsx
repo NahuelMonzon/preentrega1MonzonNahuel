@@ -1,11 +1,11 @@
-import React from 'react';
+import { ShoppingCartOutlined } from '@ant-design/icons';
+import { Badge } from 'antd';
 
 const Cartwidget = () => {
     return (
-        <div>
-            <button>botonCW</button>
-            <div>Cartwidget</div>
-        </div>
+        <Badge count={5}>
+            <ShoppingCartOutlined style={{ fontSize: '30px'}}/>
+        </Badge>
     );
 };
 

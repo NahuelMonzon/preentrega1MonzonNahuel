@@ -1,17 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { useState } from 'react'
 import Navbar from './components/navbar/navbar'
+import ItemListContainer from './components/containers/itemListContainer/itemListContainer'
+import ItemDetailContainer from './components/containers/itemDeatailContainer/itemDetailContainer'
+import { BrowserRouter, Routes, Route }from "react-router-dom"
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [categoria, setCategoria] = useState('todos')
+
   
   return (
-    <div>
-      <button>AccessoriesTech</button>
-      <Navbar />
-    </div>
+    <>
+    <BrowserRouter>
+      {/* <button>AccessoriesTech</button> */}
+      <Navbar handleCategoria={setCategoria}/>
+      <Routes>
+        <Route path='/' element={<ItemListContainer />}/> 
+        {/* <ItemDetailContainer idProduct={4} /> */}
+      </Routes>
+    </BrowserRouter>
+    </>
   )
 }
 
