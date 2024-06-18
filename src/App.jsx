@@ -1,40 +1,30 @@
-import React from 'react';
-// import Navbar from './components/Navbar';
-// import { Navbar } from './components/Navbar.jsx'
-import ItemListContainer from './components/ItemListContainer';
-import Footer from './components/Footer';
-import ItemDetailContainer from './components/ItemDetailContainer';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import Error from './components/Error';
-import Navbar from './components/Navbar';
+import './App.css'
+import { NavBar } from './components/NavBar/NavBar.jsx'
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer.jsx'
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer.jsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-const App = () => {
+function App() {
+  const WIP_MESSAGE = "Página aún en construcción..."
+  const ERROR_MESSAGE = "¡UPS! Esa página no existe..."
 
   return (
-    <>
-
     <BrowserRouter>
-
-      <Navbar />
-      
-      <Routes>
-
-        <Route path='/' element={<ItemListContainer/>}/>
-
-        <Route path='/categoria/:categoryId' element={<ItemListContainer/>}/>
-
-        <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
-
-        <Route path='*' element={<Error/>}/>
-        
-      </Routes>
-
-      <Footer/>
-      
+      <header>
+        <NavBar/>
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/category/:categoryId" element={<ItemListContainer />} />
+          <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+          <Route path="/Contacto" element={<h2>{WIP_MESSAGE}</h2>} />
+          <Route path="*" element={<h2>{ERROR_MESSAGE}</h2>} />
+        </Routes>
+      </main>
+      <footer></footer>
     </BrowserRouter>
+  )
+}
 
-    </>
-  );
-};
-
-export default App;
+export default App
