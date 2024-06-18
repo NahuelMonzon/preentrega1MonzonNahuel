@@ -1,27 +1,40 @@
-import './App.css'
-import { useState } from 'react'
-import Navbar from './components/navbar/navbar'
-import ItemListContainer from './components/containers/itemListContainer/itemListContainer'
-import ItemDetailContainer from './components/containers/itemDeatailContainer/itemDetailContainer'
-import { BrowserRouter, Routes, Route }from "react-router-dom"
+import React from 'react';
+// import Navbar from './components/Navbar';
+// import { Navbar } from './components/Navbar.jsx'
+import ItemListContainer from './components/ItemListContainer';
+import Footer from './components/Footer';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import Error from './components/Error';
+import Navbar from './components/Navbar';
 
-function App() {
+const App = () => {
 
-  const [categoria, setCategoria] = useState('todos')
-
-  
   return (
     <>
-    <BrowserRouter>
-      {/* <button>AccessoriesTech</button> */}
-      <Navbar handleCategoria={setCategoria}/>
-      <Routes>
-        <Route path='/' element={<ItemListContainer />}/> 
-        {/* <ItemDetailContainer idProduct={4} /> */}
-      </Routes>
-    </BrowserRouter>
-    </>
-  )
-}
 
-export default App
+    <BrowserRouter>
+
+      <Navbar />
+      
+      <Routes>
+
+        <Route path='/' element={<ItemListContainer/>}/>
+
+        <Route path='/categoria/:categoryId' element={<ItemListContainer/>}/>
+
+        <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
+
+        <Route path='*' element={<Error/>}/>
+        
+      </Routes>
+
+      <Footer/>
+      
+    </BrowserRouter>
+
+    </>
+  );
+};
+
+export default App;

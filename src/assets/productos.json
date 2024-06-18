@@ -1,0 +1,34 @@
+   [
+   {
+      "id": 1,
+      "description": "tus mejores carcasas",
+      "img": "/assets/img/IphoneCase.webp",
+      "name": "carcaza iphone 15",
+      "price": 35000,
+      "categoria": "IphoneCases"
+    },
+    {
+      "id": 2,
+      "description": "tus mejores carcasas",
+      "img": "https://waldencases.com/products/iphone-tejido-gros",
+      "name": "carcaza iphone 15 gros",
+      "price": 40000,
+      "categoria": "SamsungCases"
+    },
+    {
+      "id": 3,
+      "description": "tus mejores carcasas",
+      "img": "https://waldencases.com/products/samsung-bio",
+      "name": "carcaza s23 negra",
+      "price": 30000,
+      "categoria": "MotorolaCases"
+    },
+    {
+      "id": 4,
+      "description": "tus mejores carcasas",
+      "img": "https://waldencases.com/products/samsung-tejido-gros",
+      "name": "carcaza s23 premium",
+      "price": 38000,
+      "categoria": "OtherCases"
+    }
+]
